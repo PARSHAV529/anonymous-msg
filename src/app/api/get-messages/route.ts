@@ -43,6 +43,21 @@ try {
             status: 404,
         })
     }
+    if(AggregateUser[0]. return Response.json({
+        success: true,
+        messages: AggregateUser[0].messages
+
+    }, {
+        status: 200,
+    }).length==0){
+        return Response.json({
+            success: false,
+            messages: "message not found"
+    
+        }, {
+            status: 404,
+        })
+    }
 
     return Response.json({
         success: true,

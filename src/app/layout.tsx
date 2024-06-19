@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import AuthProvider from "@/context/authProvider";
 import { Toaster } from "@/components/ui/toaster"
+import Navbar from "@/components/Navbar.tsx"
 // import {QueryClientProvider,QueryClient} from '@tanstack/react-query'
 
 const inter = Inter({ subsets: ["latin"] });
@@ -22,6 +23,7 @@ export default function RootLayout({
       
       <AuthProvider>
         <body className={inter.className}>
+          <Navbar/>
           {children}
           <Toaster />
         </body>

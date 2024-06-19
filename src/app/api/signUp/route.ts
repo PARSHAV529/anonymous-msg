@@ -36,7 +36,7 @@ export async function POST(request: Request) {
                
                 existingUserByEmail.password = hasedPassword
                 existingUserByEmail.verifyCode = otp
-                existingUserByEmail.verifyCodeExpiry = new Date(Date.now()+ 300000)
+                existingUserByEmail.verifyCodeExpiry = new Date(Date.now()+ 30000)
                 await existingUserByEmail.save()
                 
     
@@ -74,11 +74,12 @@ export async function POST(request: Request) {
             })
         }
 
+        console.log(emailResponse)
         return Response.json({
             success: true,
             message:"user registration is successfully and please verify your email",
         },{
-            status:500
+            status:200
         })
 
     }
