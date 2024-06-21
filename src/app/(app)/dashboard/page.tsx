@@ -140,8 +140,10 @@ const Dashboard = () => {
   
   
   
-
-  const profilURL = `${window.location.protocol}//${window.location.host}/u/${username}`
+// if (typeof window !== "undefined") {
+//   // Client-side-only code
+// }
+  const profilURL = `${typeof window !== "undefined" && window.location.protocol}//${typeof window !== "undefined" && window.location.host}/u/${username}`
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(profilURL)
