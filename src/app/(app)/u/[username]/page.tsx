@@ -15,7 +15,7 @@ import { useForm } from 'react-hook-form'
 import * as z from 'zod'
 
 
- const page = () => {
+ const PublicPage = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false)
 
@@ -98,4 +98,4 @@ import * as z from 'zod'
   )
 }
 
-export default page
+export default PublicPage
