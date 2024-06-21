@@ -2,6 +2,9 @@
 
 This project is a web application that allows users to send and receive messages anonymously. It features secure authentication, OTP verification for sign-up, and a responsive dashboard for viewing received messages.
 
+**Send me an anonymous message here: [https://anonymous-msg-one.vercel.app/u/parshav143](https://anonymous-msg-one.vercel.app/u/parshav143)**
+
+
 ## Table of Contents
 - [Features](#features)
 - [Technologies Used](#technologies-used)
