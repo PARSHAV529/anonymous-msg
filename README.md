@@ -5,7 +5,6 @@ This project is a web application that allows users to send and receive messages
 ## Table of Contents
 - [Features](#features)
 - [Technologies Used](#technologies-used)
-- [Setup and Installation](#setup-and-installation)
 - [Usage](#usage)
 
 ## Features
