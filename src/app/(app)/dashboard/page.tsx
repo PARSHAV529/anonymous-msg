@@ -202,7 +202,7 @@ const Dashboard = () => {
         {message.length > 0 ? (
           message.map((message, index) => (  
             <MessageCard
-              // key={message._id}
+              key={index}
               message={message}
               onMessageDelete={handelDeleteMessage}
             />
