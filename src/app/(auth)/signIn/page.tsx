@@ -29,7 +29,7 @@ import { signIn } from "next-auth/react"
 
 
 
-const page = () => {
+const SignIn = () => {
   
   const [isSubmitting, setIsSubmitting] = useState(false)
   const { toast } = useToast()
@@ -146,4 +146,4 @@ tracking-tight lg:text-4xl mb-6">
   )
 }
 
-export default page
+export default SignIn

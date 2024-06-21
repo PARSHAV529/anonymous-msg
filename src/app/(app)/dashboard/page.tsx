@@ -9,8 +9,6 @@ import { useSession } from 'next-auth/react'
 import { useRouter } from 'next/navigation'
 import React, { useCallback, useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
-
-import { usePathname } from 'next/navigation'
 import { User } from 'next-auth'
 import { Button } from '@/components/ui/button'
 import { Switch } from '@/components/ui/switch'
@@ -18,7 +16,7 @@ import { Separator } from '@/components/ui/separator'
 import { Loader2, RefreshCcw } from 'lucide-react'
 import { MessageCard } from '@/components/MessageCard'
 
-const page = () => {
+const Dashboard = () => {
   const [message, setMessage] = useState<Message[]>([])
   const [loading, setLoading] = useState(false)
   const [switchLoading, setSwitchLoading] = useState(false)
@@ -71,7 +69,7 @@ const page = () => {
     } finally {
       setSwitchLoading(false)
     }
-  }, [])
+  }, [setValue,setSwitchLoading])
 
   const fetchMessage = useCallback(async (refresh: boolean = false) => {
 
@@ -218,4 +216,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Dashboard

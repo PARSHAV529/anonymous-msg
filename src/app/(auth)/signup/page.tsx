@@ -27,7 +27,7 @@ import { Loader2 } from "lucide-react"
 
 
 
-const page = () => {
+const Signup = () => {
   const [username, setUsername] = useState('')
   const [isCheckingusername, setIsCheckingUsername] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -198,4 +198,4 @@ tracking-tight lg:text-4xl mb-6">
   )
 }
 
-export default page
+export default Signup
