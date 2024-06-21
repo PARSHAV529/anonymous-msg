@@ -11,6 +11,8 @@ export async function GET(req: Request) {
     const session = await getServerSession(authOptions)
 
     const user = session?.user
+    console.log(user);
+    
 
     if (!session || !user) {
         return Response.json({
@@ -23,17 +25,21 @@ export async function GET(req: Request) {
     }
 
     const userId = new mongoose.Types.ObjectId(user._id)
+    console.log(userId);
+    
 
     try {
         const AggregateUser = await userModel.aggregate([
-            { $match: { id: userId } },
+            { $match: { _id: userId } },
             { $unwind: '$messages' },
             { $sort: { 'messages.createAt': -1 } },
-            { $group: { _id: '$_id', message: { $push: 'messages' } } }
+            { $group: { _id: '$_id', messages: { $push: '$messages' } } }
 
         ])
 
         if (!AggregateUser || AggregateUser.length == 0) {
+
+            
 
             return Response.json({
                 success: false,
@@ -56,6 +62,8 @@ export async function GET(req: Request) {
 
          
 
+            console.log("jehiuoerg",AggregateUser);
+            
         return Response.json({
             success: true,
             messages: AggregateUser[0].messages
@@ -63,6 +71,7 @@ export async function GET(req: Request) {
         }, {
             status: 200,
         })
+        
     } catch (error) {
         return Response.json({
             success: false,

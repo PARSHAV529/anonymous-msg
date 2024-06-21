@@ -23,6 +23,7 @@ import { Message } from "@/model/User"
 import axios from "axios"
 import { toast } from "./ui/use-toast"
 import { apiResponse } from "@/types/apiresponse"
+import { ReadMore } from "./Readmore"
 
 type messageCradProp ={
 message:Message;
@@ -41,17 +42,22 @@ export const MessageCard = ({message,onMessageDelete}:messageCradProp) => {
     //    onMessageDelete(message._id)
 
     }
+    
+
+    const date = message.createdAt.toString()
     return (
         <>
 
             <Card>
-                <CardHeader>
-                    <CardTitle>Card Title</CardTitle>
-                    <CardDescription>Card Description</CardDescription>
+                <CardHeader  >
+                    <CardTitle>
+                        <ReadMore id="1" text={message.content}/>
+                    </CardTitle>
+                    <CardDescription>{date && date}</CardDescription>
                 </CardHeader>
                 <CardContent>
                     <AlertDialog>
-                        <AlertDialogTrigger><X/></AlertDialogTrigger>
+                        <AlertDialogTrigger><X className=" bg-red-600 w-9 rounded-md h-9"/></AlertDialogTrigger>
                         <AlertDialogContent>
                             <AlertDialogHeader>
                                 <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>

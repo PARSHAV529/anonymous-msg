@@ -15,6 +15,7 @@ import { Switch } from '@/components/ui/switch'
 import { Separator } from '@/components/ui/separator'
 import { Loader2, RefreshCcw } from 'lucide-react'
 import { MessageCard } from '@/components/MessageCard'
+import { log } from 'console'
 
 const Dashboard = () => {
   const [message, setMessage] = useState<Message[]>([])
@@ -53,8 +54,6 @@ const Dashboard = () => {
     try {
       const res = await axios.get<apiResponse>('/api/accept-message')
       setValue('acceptMessage', res.data.isAcceptingMessage)
-      console.log(res.data);
-      console.log(acceptMessage);
       
       
 
@@ -76,14 +75,16 @@ const Dashboard = () => {
     setLoading(true)
     setSwitchLoading(false)
     try {
-      const res = await axios.get<apiResponse>('/api/get-message')
+      const res = await axios.get<apiResponse>('/api/get-messages')
       setMessage(res.data.messages || [])
+      console.log(res.data);
+      
 
       if (refresh) {
         toast({
           title: "Refreshed Messages",
           description: "Showing latest messages ",
-          variant: 'destructive'
+          variant: 'default'
         })
       }
     } catch (error) {
@@ -108,10 +109,10 @@ const Dashboard = () => {
 
     if (!session || !session.user) return
 
-    // fetchMessage()
+    fetchMessage()
     fetchacceptMessage()
 
-  }, [setMessage, setValue, session, fetchacceptMessage])
+  }, [fetchMessage, setValue, session, fetchacceptMessage])
 
   const handleSwitchChange = async () => {
     try {

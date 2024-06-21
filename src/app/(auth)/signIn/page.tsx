@@ -2,15 +2,13 @@
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import * as z from "zod"
-import axios, { AxiosError } from 'axios'
+
 import Link from "next/link"
-import { useEffect, useState } from "react"
-import { useDebounceCallback } from 'usehooks-ts'
+import {  useState } from "react"
+
 import { useToast } from "@/components/ui/use-toast"
 import { useRouter } from "next/navigation"
-import { signUpSchema } from "@/schema/signUp"
-import { useQuery } from "@tanstack/react-query"
-import { apiResponse } from "@/types/apiresponse"
+
 import {
   Form,
   FormControl,
@@ -30,7 +28,7 @@ import { signIn } from "next-auth/react"
 
 
 const SignIn = () => {
-  
+
   const [isSubmitting, setIsSubmitting] = useState(false)
   const { toast } = useToast()
   const router = useRouter()
@@ -49,29 +47,29 @@ const SignIn = () => {
 
     setIsSubmitting(true)
     try {
-      const res = await signIn('credentials',{
-        redirect:false,
-        identifier:data.identifier,
-        password:data.password
-       })
-       if(res?.error){
+      const res = await signIn('credentials', {
+        redirect: false,
+        identifier: data.identifier,
+        password: data.password
+      })
+      if (res?.error) {
         toast({
-          title:"Login Faild",
-          description:res.error,
-          variant:'destructive'
+          title: "Login Faild",
+          description: res.error,
+          variant: 'destructive'
         })
-       }
-       if(res?.url){
+      }
+      if (res?.url) {
         router.replace('/dashboard')
-       }
-       
+      }
+
     } catch (error) {
-       
-    }finally{
+
+    } finally {
       setIsSubmitting(false)
 
     }
-  
+
 
   }
   return (
@@ -89,7 +87,7 @@ tracking-tight lg:text-4xl mb-6">
         </div>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-            
+
             <FormField
               control={form.control}
               name="identifier"
@@ -102,7 +100,7 @@ tracking-tight lg:text-4xl mb-6">
 
                     />
                   </FormControl>
-                  
+
                   <FormMessage />
                 </FormItem>
               )}
