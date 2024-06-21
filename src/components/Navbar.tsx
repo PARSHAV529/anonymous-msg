@@ -11,16 +11,23 @@ const Navbar = () => {
     <nav className='p-4 md:p-6 shadow-md'>
       <div className='container mx-auto flex flex-col
     md:flex-row justify-between items-center'>
-        <a href="#" className='text-xl font-bold mb-4 md:mb-0'> Anonymous Message</a>
+        <a href="/" className='text-xl font-bold mb-4 md:mb-0'> Anonymous Message</a>
         {
           session ? (
             <>
+            <div className="flex items-center gap-2">
               <span className="mr-4">Welcome , {user.username}</span>
+             
+              <Link  href='/dashboard'><Button className=" ">Dashboard</Button></Link>
               <Button className="w-full md:w-auto" onClick={() => {
                 signOut()
               }}>Sign Out</Button>
-            </>
-          ) : (<Link  href='/signIn'><Button className="w-full md:w-auto">LogIn</Button></Link>)
+           
+            </div>
+            
+              </>
+          ) : (<div className="flex gap-2"><Link  href='/signIn'><Button className=" bg-white hover:bg-white text-black scale-110">LogIn</Button>
+                </Link><Link  href='/signup'><Button className=" ">SignUp</Button></Link></div>)
         }
       </div>
     </nav>

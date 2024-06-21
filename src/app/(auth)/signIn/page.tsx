@@ -82,7 +82,7 @@ rounded-lg shadow-md">
         <div className="text-center">
           <h1 className="text-3xl font-extrabold
 tracking-tight lg:text-4xl mb-6">
-            Join Anonymous Message
+            Welcome back To Anonymous Message
           </h1>
           <p className="mb-4">Sign In to start your anonymous
             adventure</p>

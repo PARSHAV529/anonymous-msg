@@ -77,9 +77,9 @@ export default function InputOTPControlled() {
                   </h1>
                 
                 </div>
-                <div className="space-y-2 ">
+                <div className=" flex flex-col justify-center w-full items-center ">
                 <Form {...form}>
-            <form onSubmit={onSubmit} className="space-y-6">
+            <form onSubmit={onSubmit} className="flex gap-2 items-end">
            
            
           <InputOTP
@@ -89,8 +89,8 @@ export default function InputOTPControlled() {
                     className="text-black"
                     onChange={(value) => setValue(value)}
                 >
-                    <InputOTPGroup>
-                        <InputOTPSlot index={0} />
+                    <InputOTPGroup >
+                        <InputOTPSlot  index={0} />
                         <InputOTPSlot index={1} />
                         <InputOTPSlot index={2} />
                         <InputOTPSlot index={3} />
@@ -99,13 +99,13 @@ export default function InputOTPControlled() {
                     </InputOTPGroup>
                 </InputOTP>
             
-                <Button type="submit" disabled={isSubmitting}>{
+                <Button type="submit"  disabled={isSubmitting}>{
               isSubmitting ? <><Loader2 className="mr-2 h-4 w-4 animate-spin" />Please wait</> : "Submit"
             }</Button>
           </form>
         </Form>
                 
-                <div className="text-center text-black text-sm">
+                <div className="text-center mt-5     text-black text-sm">
                     {value === "" ? (
                         <>Enter the verification code sent to your email</>
                     ) : (
