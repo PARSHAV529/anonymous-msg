@@ -48,15 +48,15 @@ export const MessageCard = ({message,onMessageDelete}:messageCradProp) => {
     return (
         <>
 
-            <Card>
+            <Card className="flex items-center justify-between">
                 <CardHeader  >
                     <CardTitle>
                         <ReadMore id="1" text={message.content}/>
                     </CardTitle>
                     <CardDescription>{date && date}</CardDescription>
                 </CardHeader>
-                <CardContent>
-                    <AlertDialog>
+                <CardContent >
+                    <AlertDialog >
                         <AlertDialogTrigger><X className=" bg-red-600 w-9 rounded-md h-9"/></AlertDialogTrigger>
                         <AlertDialogContent>
                             <AlertDialogHeader>

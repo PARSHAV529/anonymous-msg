@@ -33,8 +33,8 @@ export default function InputOTPControlled() {
 
     })
 
-    const onSubmit = async () => {
-        // e.preventDefault()
+    const onSubmit = async (e:any) => {
+        e.preventDefault()
         setIsSubmitting(true)
         try {
             const res = await axios.post('/api/verify-code', {

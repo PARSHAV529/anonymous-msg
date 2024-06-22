@@ -18,7 +18,7 @@ export async function POST(request: Request) {
 
         const existingUserByEmail = await userModel.findOne({ email, })
 
-        const otp = Math.round((Math.random()* 1000000)).toString()
+        const otp =  Math.floor(100000 + Math.random() * 900000).toString()
         
         
         if (existingUserByEmail) {
@@ -36,7 +36,7 @@ export async function POST(request: Request) {
                
                 existingUserByEmail.password = hasedPassword
                 existingUserByEmail.verifyCode = otp
-                existingUserByEmail.verifyCodeExpiry = new Date(Date.now()+ 30000)
+                existingUserByEmail.verifyCodeExpiry = new Date(Date.now()+ 5 * 60000)
                 await existingUserByEmail.save()
                 
     
@@ -73,6 +73,8 @@ export async function POST(request: Request) {
                 status:500
             })
         }
+
+        
 
         console.log(emailResponse)
         return Response.json({

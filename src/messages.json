@@ -1,17 +1,17 @@
 [
     {
-        "title": "Message from Neha",
-        "content": "Hey,how are you doing today?",
+        "title": "1.Sign Up",
+        "content": "Create an account using your email. An OTP will be sent to your email for verification.",
         "recivied": " Just now" 
     },
     {
-        "title": "Message from User123",
-        "content": "Hey, Which college in you are ",
+        "title": "2. Send Messages",
+        "content": "Send anonymous messages to other users without revealing your identity.",
         "recivied": "2 hours ago" 
     },
     {
-        "title": "Message from unkown897",
-        "content": "Hey, who is your Crush",
+        "title": "3. View Messages",
+        "content": "Access your dashboard to view the messages you have received anonymously.",
         "recivied": "10 minutes ago" 
     }
 ]
