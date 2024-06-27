@@ -132,7 +132,7 @@ tracking-tight lg:text-4xl mb-6">
         </Form>
         <div className="text-center mt-4">
           <p>
-            Already a member?{' '}
+            New to Anonymous Message?{' '}
             <Link href="/signup" className="text-blue-600 hover:">
               Sign Up
             </Link>
