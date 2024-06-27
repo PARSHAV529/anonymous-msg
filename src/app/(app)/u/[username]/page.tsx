@@ -89,7 +89,7 @@ import * as z from 'zod'
               )}
             />
            
-            <Button className='w-20' type="submit" disabled={isSubmitting}>{
+            <Button className='w-30' type="submit" disabled={isSubmitting}>{
               isSubmitting ? <><Loader2 className="mr-2 h-4 w-4 animate-spin" />Please wait</> : "Send It"
             }</Button>
           </form>
